@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BaseDiffuseTMA
+  m_Name: FloorDiffuseTMA
   m_Shader: {fileID: 4800000, guid: 98b1707a1512c8c4da0e70e0186115a0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -79,7 +79,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Exposure: -0.1
+    - _Exposure: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -90,12 +90,12 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tiling: 1
+    - _Tiling: 4.08
     - _UVSec: 0
     - _ZWrite: 1
     - g_flCornerAdjust: 0.5
     - g_flOutlineWidth: 0.005
     m_Colors:
-    - _Color: {r: 0.8308824, g: 0.81866354, b: 0.81866354, a: 1}
+    - _Color: {r: 0.5441177, g: 0.5441177, b: 0.5441177, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - g_vOutlineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
