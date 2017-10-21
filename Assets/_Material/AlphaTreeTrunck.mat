@@ -79,7 +79,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Exposure: -0.6
+    - _Exposure: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -91,11 +91,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tiling: 1.5
+    - _Tiling: 1
     - _UVSec: 0
     - _ZWrite: 1
     - g_flCornerAdjust: 0.5
-    - g_flOutlineWidth: 0.007
+    - g_flOutlineWidth: 0.003
     - g_ref: 1
     m_Colors:
     - _Color: {r: 1, g: 0.84442186, b: 0.5661764, a: 1}

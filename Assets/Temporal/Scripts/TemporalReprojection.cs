@@ -52,7 +52,7 @@ public class TemporalReprojection : EffectBase
         _camera = GetComponent<Camera>();
         _frustumJitter = GetComponent<FrustumJitter>();
         _velocityBuffer = GetComponent<VelocityBuffer>();
-        _velocityBuffer.enabled = true;
+        //_velocityBuffer.enabled = true;
     }
 
     void Clear()
@@ -175,7 +175,7 @@ public class TemporalReprojection : EffectBase
             }
             RenderTexture.ReleaseTemporary(internalDestination);
         }
-        _velocityBuffer.enabled = false;
+        //_velocityBuffer.enabled = false;
     }
 
     void OnApplicationQuit()
