@@ -149,7 +149,7 @@
 		{
 			v2f o;
 			
-			o.pos = UnityObjectToClipPos( v.vertex);
+			o.pos = UnityObjectToClipPos(v.vertex);
 			o.uv = v.texcoord;
 			o.lightDir = normalize(ObjSpaceLightDir(v.vertex));
 			o.normal = v.normal;
@@ -161,8 +161,8 @@
 
 		fixed4 frag(v2f i) : COLOR
 		{
-			fixed atten = LIGHT_ATTENUATION(i); 
-			
+			fixed atten = LIGHT_ATTENUATION(i);
+
 			int oscillation = (int)(_Time.x * _Oscilation);
 			fixed2 uv = i.uv * _Tiling;
 			uv.x += oscillation * 0.8;
@@ -186,6 +186,7 @@
 			fixed4 c = (cl4 * weights0.x) + (cl3 * weights0.y) + (cl2 * weights0.z) + (cl1 * weights1.x) + (fixed4(1,1,1,1) * weights1.y);
 
 			return c * _Color * (albedo * 0.5f) * (_LightColor0 * atten);
+			//return depth * 10;
 		}
 	ENDCG
 
@@ -203,7 +204,7 @@
 			CGPROGRAM
 			#pragma vertex vert  
 			#pragma fragment frag
-			#pragma multi_compile_fwdbase  
+			#pragma multi_compile_fwdbase 
 			ENDCG
       	}
 

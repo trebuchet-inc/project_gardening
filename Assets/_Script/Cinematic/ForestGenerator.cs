@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ForestGenerator : MonoBehaviour 
 {
-	public GameObject treeToSpawn;
+	public GameObject[] treeToSpawn;
 	public int howManyTreeDoYouWant;
 
 	List<Vector3> _treeSpawned;
@@ -12,6 +12,7 @@ public class ForestGenerator : MonoBehaviour
 	SphereCollider _zone;
 	int currentTry = 0;
 	int maxTry = 1000;
+	int _i;
 	
 	void Start () {
 		_zone = GetComponent<SphereCollider>();
@@ -58,7 +59,8 @@ public class ForestGenerator : MonoBehaviour
 				}
 			}
 			_treeSpawned.Add(hit.point);
-			_forest.Add(Instantiate(treeToSpawn, hit.point, Quaternion.identity));
+			_forest.Add(Instantiate(treeToSpawn[_i % treeToSpawn.Length], hit.point + Vector3.down * 0.1f, Quaternion.identity));
+			_i++;
 		}
 	}
 }

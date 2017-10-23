@@ -43,10 +43,10 @@ public class CameraController : MonoBehaviour {
 
 		transform.Rotate(rotationSpeed * thirdAxis * Time.deltaTime, rotationSpeed * horizontalAxis * Time.deltaTime, 0);
 
-		if(Input.GetKeyDown(KeyCode.Alpha1)) speed -= 2f;
-		if(Input.GetKeyDown(KeyCode.Alpha2)) speed += 2f;
-		if(Input.GetKeyDown(KeyCode.Alpha3)) rotationSpeed -= 10f;
-		if(Input.GetKeyDown(KeyCode.Alpha4)) rotationSpeed += 10f;
+		if(Input.GetKeyDown(KeyCode.Alpha1)) speed *= 0.8f;
+		if(Input.GetKeyDown(KeyCode.Alpha2)) speed *= 1.2f;
+		if(Input.GetKeyDown(KeyCode.Alpha3)) rotationSpeed *= 0.8f;
+		if(Input.GetKeyDown(KeyCode.Alpha4)) rotationSpeed *= 1.2f;
 		if(Input.GetKeyDown(KeyCode.R))
 		{
 			transform.position = _origPos;

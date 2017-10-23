@@ -25,7 +25,7 @@ public class SproutableAgent : MonoBehaviour
 		}
 	}
 
-	public virtual void OnWillRenderObject()
+	public virtual void LateUpdate()
 	{
 		this.transform.localScale = Vector3.one * _growRate;
 	}

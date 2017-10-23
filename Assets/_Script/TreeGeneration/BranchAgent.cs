@@ -69,9 +69,9 @@ public class BranchAgent : SproutableAgent
 		return pos;
 	}
 
-	public override void OnWillRenderObject()
+	public override void LateUpdate()
 	{
-		base.OnWillRenderObject();
+		base.LateUpdate();
 		_material.SetFloat("_Tiling", transform.lossyScale.x);
 	}
 }

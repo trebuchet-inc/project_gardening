@@ -10,6 +10,6 @@ public class LeafAgent : SproutableAgent
 	public  override void Start () 
 	{
 		base.Start();
-		GetComponent<SpriteRenderer>().material.color = palette[Random.Range(0,palette.Length)];
+		GetComponentInChildren<SpriteRenderer>().material.color = palette[Random.Range(0,palette.Length)];
 	}
 }
