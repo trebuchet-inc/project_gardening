@@ -25,6 +25,8 @@
 			sampler2D _Layer3;
 			sampler2D _Layer4;
 
+			static const float PI = 3.14159;
+
 			half4 _Color;
 			float _ColorWeight;
 			float _Tiling;
@@ -33,12 +35,21 @@
 			fixed4 frag (v2f_img i) : SV_Target
 			{
 				half4 albedo = tex2D(_MainTex, i.uv);
-				int oscillation = (int)(_Time.x * _Oscilation);
-				half2 uv = i.uv * _Tiling;
-				uv.x += oscillation * 0.8;
-				uv.y += oscillation * 0.5;
-				half light = (albedo.r * 0.3 + albedo.g * 0.59 + albedo.b * 0.11) * 4;
+				//int oscillation = (int)(_Time.x * _Oscilation);
 
+				half2 uv = i.uv * _Tiling;
+
+				//uv.x += oscillation * 0.8;
+				//uv.y += oscillation * 0.5;
+				uv -= _Tiling * 0.5f;
+				float si = sin ( _Oscilation + PI);
+            	float co = cos ( _Oscilation + PI);
+            	float2x2 rotationMatrix = float2x2( co, -si, si, co);
+				uv = mul(uv, rotationMatrix);
+				uv += _Tiling * 0.5f;
+				
+
+				half light = (albedo.r * 0.3 + albedo.g * 0.59 + albedo.b * 0.11) * 4;
 				half3 intensity = half3(light,light,light);
 
 				half3 weights0 = saturate(intensity - half3(0,1,2));

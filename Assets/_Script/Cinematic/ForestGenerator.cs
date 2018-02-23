@@ -35,6 +35,7 @@ public class ForestGenerator : MonoBehaviour
 	
 	void GenerateForest() 
 	{
+		print("asd");
 		for(int i = 0; i < howManyTreeDoYouWant; i++)
 		{
 			spawnTree();

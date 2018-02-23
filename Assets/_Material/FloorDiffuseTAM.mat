@@ -86,12 +86,12 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Oscilation: 0
+    - _Oscilation: 20
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tiling: 50
+    - _Tiling: 40
     - _UVSec: 0
     - _ZWrite: 1
     - g_flCornerAdjust: 0.5

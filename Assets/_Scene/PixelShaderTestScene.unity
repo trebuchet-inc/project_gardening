@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -141,24 +142,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &353449185 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100004, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
-  m_PrefabInternal: {fileID: 1208203085}
---- !u!64 &353449189
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 353449185}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
 --- !u!1 &801969839 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1828517695126936, guid: 7cbf2fb37c9d2f947a1b3102ff873f8b,
@@ -183,24 +166,6 @@ MonoBehaviour:
   colorWeight: 0.1
   tiling: 5
   oscilation: 200
---- !u!1 &836244217 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100002, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
-  m_PrefabInternal: {fileID: 1208203085}
---- !u!64 &836244221
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 836244217}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 5.5
-  m_Mesh: {fileID: 4300000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
 --- !u!1001 &1032937391
 Prefab:
   m_ObjectHideFlags: 0
@@ -243,6 +208,10 @@ Prefab:
     - target: {fileID: 20257248470610674, guid: 7cbf2fb37c9d2f947a1b3102ff873f8b,
         type: 2}
       propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367763556675730, guid: 7cbf2fb37c9d2f947a1b3102ff873f8b, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -381,7 +350,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -484466444
+  randomSeed: -217111149
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -834,11 +803,11 @@ ParticleSystem:
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 10, y: 10, z: 10}
     placementMode: 0
+    m_MeshMaterialIndex: 0
+    m_MeshNormalOffset: 0
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
-    m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
@@ -1554,6 +1523,47 @@ ParticleSystem:
         - serializedVersion: 2
           time: 1
           value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    speedModifier:
+      serializedVersion: 2
+      minMaxState: 0
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2951,6 +2961,7 @@ ParticleSystem:
     maxLights: 20
   TrailModule:
     enabled: 1
+    mode: 0
     ratio: 1
     lifetime:
       serializedVersion: 2
@@ -2995,12 +3006,14 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 2
+    ribbonCount: 1
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
     generateLightingData: 0
+    splitSubEmitterRibbons: 0
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
@@ -3817,6 +3830,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 349f63edefd478843abc9d0f7c83de76, type: 2}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
@@ -3840,7 +3857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1239997533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,6 +3994,24 @@ MonoBehaviour:
   NoiseIntensityOffset: 0.3
   NoiseVelocity: {x: 3, y: 3}
   MaxRayLength: 400
+--- !u!1 &1466391675 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
+  m_PrefabInternal: {fileID: 1208203085}
+--- !u!64 &1466391676
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466391675}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
 --- !u!1 &1854399982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,6 +4094,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -4069,13 +4105,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1854399982}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.080269024, z: -0, w: 0.99677324}
   m_LocalPosition: {x: 0, y: 0, z: -5.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1239997534}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -9.208, z: 0}
 --- !u!114 &1854399988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4106,8 +4142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pattern: 12
   patternScale: 1
-  activeSample: {x: 0, y: 0, z: 0, w: 0}
-  activeIndex: -2
+  activeSample: {x: -0.3125, y: -0.35185185, z: 0.3125, w: 0.2037037}
+  activeIndex: 11
 --- !u!114 &1854399990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4229,37 +4265,19 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1854399982}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8bbf6eca9104bf4fa5b98e78b2c390a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0, a: 0}
-  layer1: {fileID: 2800000, guid: 8170c35fef008864bbd31f81d3145af1, type: 3}
-  layer2: {fileID: 2800000, guid: dcfdfe6f9e9da1343a34319c3addd3b2, type: 3}
-  layer3: {fileID: 2800000, guid: 52e81fdbfb171ea41acd6d7f26fb22a9, type: 3}
-  layer4: {fileID: 2800000, guid: 8ca2f970115a6fe4fad2ba57b422d155, type: 3}
-  colorWeight: 0.1
+  layer1: {fileID: 2800000, guid: 09ee7049d6f1d7e408fab7dc7b645d16, type: 3}
+  layer2: {fileID: 2800000, guid: 8d551a85faf6cc7458735c222adf2e13, type: 3}
+  layer3: {fileID: 2800000, guid: 1e76aec5b64c83f409ab8b343bad3939, type: 3}
+  layer4: {fileID: 2800000, guid: 5208ae1623afff74e9d80ca8d2988517, type: 3}
+  colorWeight: 0
   tiling: 5
-  oscilation: 200
---- !u!1 &1971148454 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100006, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
-  m_PrefabInternal: {fileID: 1208203085}
---- !u!64 &1971148458
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1971148454}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
+  oscilation: 0
 --- !u!1 &2056615551
 GameObject:
   m_ObjectHideFlags: 0

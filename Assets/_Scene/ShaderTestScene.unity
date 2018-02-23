@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -141,24 +142,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &353449185 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100004, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
-  m_PrefabInternal: {fileID: 1208203085}
---- !u!64 &353449189
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 353449185}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
 --- !u!1001 &440745387
 Prefab:
   m_ObjectHideFlags: 0
@@ -205,24 +188,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cbf2fb37c9d2f947a1b3102ff873f8b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &836244217 stripped
+--- !u!1 &599202080 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 100002, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
+  m_PrefabParentObject: {fileID: 100000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
   m_PrefabInternal: {fileID: 1208203085}
---- !u!64 &836244221
+--- !u!64 &599202083
 MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 836244217}
+  m_GameObject: {fileID: 599202080}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 5.5
-  m_Mesh: {fileID: 4300000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
 --- !u!1 &1074985636
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +338,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1604106069
+  randomSeed: 1965714203
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -808,11 +791,11 @@ ParticleSystem:
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 10, y: 10, z: 10}
     placementMode: 0
+    m_MeshMaterialIndex: 0
+    m_MeshNormalOffset: 0
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
-    m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
@@ -1528,6 +1511,47 @@ ParticleSystem:
         - serializedVersion: 2
           time: 1
           value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    speedModifier:
+      serializedVersion: 2
+      minMaxState: 0
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2925,6 +2949,7 @@ ParticleSystem:
     maxLights: 20
   TrailModule:
     enabled: 1
+    mode: 0
     ratio: 1
     lifetime:
       serializedVersion: 2
@@ -2969,12 +2994,14 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 2
+    ribbonCount: 1
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
     generateLightingData: 0
+    splitSubEmitterRibbons: 0
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
@@ -3682,7 +3709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawChildren: 0
-  solid: 0
+  solid: 1
   wires: 0
   colorActive: {r: 0, g: 1, b: 0, a: 0.5}
   drawInactive: 1
@@ -3791,6 +3818,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a360e97f99bd16c49965421e098afa5e, type: 2}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
@@ -4033,6 +4064,7 @@ Camera:
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -4080,8 +4112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pattern: 12
   patternScale: 1
-  activeSample: {x: -0.25, y: 0.16666669, z: 0, w: -0.16666666}
-  activeIndex: 1
+  activeSample: {x: 0.25, y: -0.3888889, z: -0.25, w: 0.16666669}
+  activeIndex: 2
 --- !u!114 &1854399990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4326,24 +4358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Resolution: 1
   DefaultSpotCookie: {fileID: 2800000, guid: e32dd94f7fe824746aaea4174b87c3ce, type: 3}
---- !u!1 &1971148454 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100006, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
-  m_PrefabInternal: {fileID: 1208203085}
---- !u!64 &1971148458
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1971148454}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: 93b987bdce21899418e7b1a8ce207a7d, type: 3}
 --- !u!1 &2056615551
 GameObject:
   m_ObjectHideFlags: 0
